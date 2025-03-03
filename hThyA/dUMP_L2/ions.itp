@@ -1,0 +1,30 @@
+[ moleculetype ]
+;Sodium Ion
+; molname  nrexcl
+SOD       3
+
+[ atoms ]
+; id    at type     res nr  res name   at name  cg nr  charge    mass	 
+  1      SOD         1      SOD        SOD      1       1.000    22.98977 
+
+
+[ moleculetype ]
+;Chloride Ion
+; molname  nrexcl
+CLA        3
+
+[ atoms ]
+; id    at type     res nr  res name   at name  cg nr  charge    mass
+  1     CLA         1      CLA        CLA      1      -1.000    35.45000 ; qtot = -1.000000
+
+
+[ moleculetype ]
+;Alchemical Ion for chloride
+; molname  nrexcl
+CL       3
+
+[ atoms ]
+; id    at type     res nr  res name   at name  cg nr  charge    mass	  typeB  chargeB	massB		
+  1      CLA         1      CLA        CLA      1      -1.000   35.45000   CLA	  0.000 	35.45000 
+
+

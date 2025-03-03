@@ -1,0 +1,55 @@
+; Include forcefield parameters
+#include "./charmm36-jul2021.ff/forcefield.itp"
+
+#include "./ligands/7Z9/A/7z9.prm"
+#include "./ligands/UMP/B/ump.prm"
+#include "./ffmerged.itp"
+
+; Include chain topologies
+#include "topol_Protein_chain_A.itp"
+#include "topol_Protein_chain_B.itp"
+
+#include "./ligands/7Z9/A/7z9.itp"
+#ifdef POSRES_LIG
+#include "./ligands/7Z9/A/posre_7Z9A.itp"
+#include "./ligands/7Z9/B/posre_7Z9B.itp"
+#endif
+
+#include "./ligands/UMP/B/ump.itp"
+#ifdef POSRES_LIG
+#include "./ligands/UMP/B/posre_umpB.itp"
+#endif
+
+#include "./merged.itp"
+#ifdef POSRES_LIG
+#include "./posre.itp"
+#endif
+
+; Include water topology
+#include "./charmm36-jul2021.ff/tip3p.itp"
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1    1       1000       1000       1000
+#endif
+
+; Include topology for ions
+#include "./charmm36-jul2021.ff/ions.itp"
+
+
+
+[ system ]
+; Name
+Protein in water
+
+[ molecules ]
+; Compound        #mols
+Protein_chain_A     1
+Protein_chain_B     1
+7Z9					2
+UMP					1
+MOL                 1
+SOL               128
+SOL               139
