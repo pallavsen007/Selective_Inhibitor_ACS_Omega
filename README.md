@@ -1,5 +1,5 @@
 # Selective_Inhibitor_ACS_Omega
-Input files for the alchemical simulations for the paper 
+Supporting input files for the alchemical simulations for the paper 
 
 
 
